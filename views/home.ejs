@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HODLINFO</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+          <h1>HODLINFO</h1>
+          <div class="controls">
+            <button>INR</button>
+            <button>BTC</button>
+            <button>BUY BTC</button>
+          </div>
+          <div class="setting">
+            <div id="timer-circle">
+              <span id="timer">60</span>
+            </div>
+            <button class="telegram">Connect Telegram</button>
+            <label class="toggle-switch">
+              <input type="checkbox">
+              <span class="slider"></span>
+          </label>
+          </div>
+        </header>
+
+        <div class="price-info">
+          <h3>Best Price to Trade</h3>
+            <ul class="list">
+              <li>0.1%</li>
+              <li>0.96%</li>
+              <li><span>₹ 26,56,110</span></li>
+              <li>2.73%</li>
+              <li>7.51%</li>
+            </ul>
+          <p>Average BTC/INR net price including commission</p>
+        </div>
+        <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Platform</th>
+              <th>Last</th>
+              <th>Buy</th>
+              <th>Sell</th>
+              <th>Volume</th>
+              <th>Base Unit</th>
+            </tr>
+          </thead>
+          <tbody id="crypto-table">
+            <% tickers.forEach((tickers,index) => {%>
+            <tr>
+                <td><%= index +1 %></td>
+                <td><%= tickers.name %></td>
+                <td><%= tickers.last %></td>
+                <td><%= tickers.buy %></td>
+                <td><%= tickers.sell %></td>
+                <td><%= tickers.volume %></td>
+                <td><%= tickers.base_unit %></td>
+            </tr>
+            <% })  %>
+          </tbody>
+        </table>
+      </div>
+
+        <footer>
+            <hr>
+            <div class="end">
+            <h6>Copyright © 2019
+                HodlInfo.com</h6>
+                <h6>Support</h6>
+            </div>
+        </footer>
+      </div>
+    
+   
+    <script src="/script.js"></script>
+</body>
+</html>

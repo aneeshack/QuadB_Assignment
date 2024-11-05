@@ -1,0 +1,239 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #1b1b1b;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+
+  .toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+  }
+  
+  
+  .toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 25px;
+  }
+  
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%; 
+  }
+  
+  .toggle-switch input:checked + .slider {
+    background-color: #2ad2c9;
+  }
+  
+  .toggle-switch input:checked + .slider:before {
+    transform: translateX(24px); 
+  }
+
+  .container{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-height: 100vh;
+  }
+
+  header {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right : 30px;
+    margin-left: 30px;
+    margin-top: 20px;
+  }
+  
+  header h1{
+    color: rgb(163, 237, 237);
+  }
+
+  .controls button {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    margin: 0 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+  .setting{
+    display: flex;
+    align-items: center;
+  }
+
+  #timer {
+    font-size: 18px;
+    color: #2ad2c9;
+  }
+
+  #timer-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #2ad2c9;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+
+  .telegram{
+    padding: 10px;
+    border-radius: 10px;
+    background: rgb(14, 216, 216);
+    border: none;
+    color: white;
+    font-weight: 600;
+    margin-right: 10px;
+  }
+
+  .price-info{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+ 
+  .price-info h3 {
+    color: #7b7676;
+  }
+  
+  .list{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    color: rgb(14, 216, 216);
+    font-size: 25px;
+  }
+  
+  .list span{
+    font-size: 45px;
+    font-weight: 600;
+    color: white;
+  }
+
+  .price-info p{
+    color: #7b7676;
+  }
+
+
+  table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+
+  th, td {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+  }
+
+  
+  td {
+    text-align: center;
+  }
+
+  thead th {
+    padding: 10px;
+    text-align: center;
+    color: #7b7676;
+  }
+
+  tbody tr {
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  tbody tr td {
+    border-bottom: 1px solid #444;
+    background-color: #2a2a2a;
+    color: white;
+  }
+
+  footer{
+    margin-bottom: 0px;
+    margin-top: 50px;
+    padding: 10px 0;
+   
+  }
+
+  
+  hr{
+    color: #7b7676;
+  }
+  footer .end{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 20px;
+    min-height: 50px;
+    color: #7b7676;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {  
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .controls, .setting {
+        margin-top: 10px;
+        width: 100%;  
+        display: flex;
+        justify-content: center;
+    }
+
+    .controls button, .setting button, .setting #theme-switch {
+        margin: 5px; 
+    }
+    .price-info{
+      margin-top: 80px;
+      margin-bottom: 20px;
+
+    }
+    .price-info .list li{
+      font-size: 15px;
+    }
+    .price-info .list li span{
+      font-size: 35px;
+    }
+  }
